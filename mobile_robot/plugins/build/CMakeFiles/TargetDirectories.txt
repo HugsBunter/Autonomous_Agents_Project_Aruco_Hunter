@@ -1,0 +1,3 @@
+/home/nikos/catkin_ws/src/mobile_robot/plugins/build/CMakeFiles/rebuild_cache.dir
+/home/nikos/catkin_ws/src/mobile_robot/plugins/build/CMakeFiles/edit_cache.dir
+/home/nikos/catkin_ws/src/mobile_robot/plugins/build/CMakeFiles/aruco_path_plan.dir

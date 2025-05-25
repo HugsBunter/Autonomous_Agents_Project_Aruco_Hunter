@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rover">
+
+  <gazebo>
+    <plugin name="rov_control" filename="libgazebo_ros_control.so"/>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="diff_drive" filename="libgazebo_rosz_diff_drive.so">
+
+       <!-- Plugin update rate in Hz -->
+      <updateRate>10</updateRate>
+
+
+      <!-- Wheel Info -->
+      <leftJoint>wheel_front_left_joint</leftJoint>
+      <leftJoint>wheel_mid_left_joint</leftJoint>
+      <leftJoint>wheel_rear_left_joint</leftJoint>
+      <rightJoint>wheel_front_right_joint</rightJoint>
+      <rightJoint>wheel_mid_right_joint</rightJoint>
+      <rightJoint>wheel_rear_right_joint</rightJoint>
+      <wheelSeparation>1.0</wheelSeparation>
+      <wheelDiameter>0.33</wheelDiameter>
+
+      
+      <!-- Limits -->
+      <wheelTorque>200</wheelTorque>
+      <wheelAcceleration>10.0</wheelAcceleration>
+
+
+      <!-- Output -->
+
+      <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+      <commandTopic>cmd_vel</commandTopic>
+      
+      <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+      <odometryTopic>odom</odometryTopic>
+
+      <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      
+      <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+      <odometrySource>1</odometrySource>
+
+      <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+      <publishWheelTF>true</publishWheelTF>
+
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+
+      <publishOdom>true</publishOdom>
+      <publishWheelJointState>true</publishWheelJointState>
+      
+      </plugin>
+  </gazebo>
+
+</robot>

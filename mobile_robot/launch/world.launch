@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+   <arg name="aruco_world_final" default="$(find mobile_robot)/worlds/aruco_world_final.world"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg aruco_world_final)"/>
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include> 
+
+</launch>
